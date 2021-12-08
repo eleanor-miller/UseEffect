@@ -4,18 +4,18 @@ export function App() {
   const [count, setCount] = useState(0)
   // useEffect:
   //        function to call
-  //                |        array of variables to watch for changes
-  //                |         |
-  //                |         |
-  //                v         v
-  useEffect(theCountChanged, [count])
+  //                |          array of variables to watch for changes
+  //                |           |
+  //                |           |
+  //                v           v
+  //useEffect(theCountChanged, [count])
+
+  useEffect(function () {
+    console.log(`Wow, the count is now ${count}`)
+  })
 
   function handleClickButton() {
     setCount(count + 1)
-  }
-
-  function theCountChanged() {
-    console.log(`Wow, the count is now ${count}`)
   }
 
   return (
